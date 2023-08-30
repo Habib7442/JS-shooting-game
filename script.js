@@ -7,7 +7,6 @@ const BULLET_SPEED = 500;
 let gameIsOver = false;
 
 kaboom({
-  font: "sinko",
   background: [255, 153, 0, 1],
 });
 
