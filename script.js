@@ -77,10 +77,11 @@ player.onCollide("enemy", (player) => {
     gameOver.text = "Game Over";
     destroy(player);
     addKaboom(player.pos);
+    clearInterval(enemySpawnInterval);
   }
 });
 
-setInterval(() => {
+const enemySpawnInterval = setInterval(() => {
   for (let i = 0; i < 5; i++) {
     let x = width();
     let y = rand(0, height());
@@ -95,6 +96,8 @@ setInterval(() => {
     });
   }
 }, 5000);
+
+
 
 // Display score
 const scoreLabel = add([text(`Score: ${score}`), pos(12, 12)]);
